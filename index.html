@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dataviz</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='//fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/hammer.min.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <h2>dataviz and mapping</h2>
+        </div>
+
+        <div class="slide">
+            <h2>me:</h2>
+            <h3>Eric Brelsford</h3>
+        </div>
+
+        <div class="slide">
+            <h2>me:</h2>
+            <h3>programmer, mapmaker, teacher</h3>
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnyc.png);">
+            <a class="source" href="https://livinglotsnyc.org/#13/40.6866/-73.9366">
+                Living Lots NYC
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urban-reviewer-full.png);">
+            <a href="https://596acres.github.io/urbanreviewer/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scan.png);">
+            <a href="https://data.wastewaterscan.org/tracker?charts=CmQQACABSABSBmNkY2VhZFoMQkEuMiBMUFBBMjRTWg1EZWx0YSAxNTYtMTU3WgxIViA2OS03MCBEZWxaE09taWNyb24gRGVsIDE0My0xNDVaCFhCQl9ia3B0ePsDigEGOGNmNmQx&selectedChartId=8cf6d1" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>why visualize data?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/health-atlas.png);">
+            <a class="source" href="https://healthatlas.ucsf.edu/?active=covid_fully_vaccinated_percap&active=pct_eli_all&geography=counties&covid=2021-10-12&zoom=5.269460674993227&lng=-119.5&lat=37.3262221021474">
+                UCSF Health Atlas
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/localsandtourists.png);">
+            <a class="source" href="http://www.flickr.com/photos/walkingsf/4671594023/in/set-72157624209158632">
+                Locals and Tourists
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>dataviz is great</h2>
+        </div>
+
+        <div class="slide">
+            <h2>dataviz is great, but let's talk about data first</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tactical-tech.png);">
+            <a href="https://tacticaltech.org/news/exposing-the-invisible-the-kit/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tactical-tech-acquisition.png);">
+            <a href="https://kit.exposingtheinvisible.org/en/data-acquisition.html#scraping-lists-and-tables-with-google-sheets" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-open-data-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-open-data-1.png);">
+            <h2>in NYC we are fortunate to have access to a ton of data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-open-data-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-open-data-3.png);">
+            <a href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-open-data-4.png);">
+            <a href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/pi5s-9p35" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>finding data for other places can be difficult, depending on what you're looking for</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/poland-gis-datasets.png);">
+            <a href="https://github.com/sk1me/poland-gis-datasets" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-support.png);">
+            <a href="https://gis-support.pl/baza-wiedzy-2/dane-do-pobrania/granice-administracyjne/" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>for charts and graphs you'll want to look mostly for spreadsheets</h2>
+        </div>
+
+        <div class="slide">
+            <h2>for maps you'll want to look mostly for shapefiles and spreadsheets</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in maps, spreadsheets will work fine as long as they have <em>latitude</em> and <em>longitude</em> columns</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-open-data-4.png);">
+            <h2>this is the best-case scenario&mdash;someone made the data you needed</h2>
+            <a href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/pi5s-9p35" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>sometimes you'll have to collect your own data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scp-amnesia-1.png);">
+            <a class="source" href="https://www.youtube.com/watch?v=zeZ74cZn-Lg">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scp-amnesia-2.png);">
+            <a class="source" href="https://www.youtube.com/watch?v=zeZ74cZn-Lg">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scp-amnesia-3.png);">
+            <a class="source" href="https://www.youtube.com/watch?v=zeZ74cZn-Lg">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scp-amnesia-4.png);">
+            <a class="source" href="https://www.youtube.com/watch?v=zeZ74cZn-Lg">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scp_les.png);">
+            <a class="source" href="http://www.notbored.org/the-scp.html">Surveillance Camera Players</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scp-mapping.jpg);">
+            <a class="source" href="http://www.notbored.org/the-scp.html">Surveillance Camera Players</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scp-mapping-zoom.jpg);">
+            <a class="source" href="http://www.notbored.org/the-scp.html">Surveillance Camera Players</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/isee.png);">
+            <a class="source" href="http://66.93.183.118:8080/isee/s1?zm=0&id=11885">iSee</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers.png);">
+            <a class="source" href="http://fieldpapers.org">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers.png);">
+            <h2>if you need to collect data "in the field"</h2>
+            <a class="source" href="http://fieldpapers.org">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-make-atlas.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-print-atlas.png);">
+            <a class="source" href="http://fieldpapers.org/atlas.php?id=fhnp4qks#18/40.73649/-73.99715">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-page.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/walkingpapers-osm.jpg);">
+            <a class="source" href="http://wiki.openstreetmap.org/wiki/Walking_Papers">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-uploaded.png);">
+            <a class="source" href="http://fieldpapers.org/atlas.php?id=ncz5lrfs#17/40.67782/-73.96397">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>sometimes you can transcribe data from non-map sources</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fastco-citizens-track-deaths.png);">
+            <a href="http://www.fastcompany.com/3045724/fatal-encounters-crowdsourcing-deaths-by-police" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fastco-citizens-track-deaths.png);">
+            <p style="background-color: rgba(255, 255, 255, 0.8);">"out of the 17,000 law-enforcement agencies in the United States, only 750, or 4.4% of them, submitted death-by-police data to the FBI in the most recent year available."</p>
+            <a href="http://www.fastcompany.com/3045724/fatal-encounters-crowdsourcing-deaths-by-police" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/the-counted.png);">
+            <a href="http://www.theguardian.com/us-news/ng-interactive/2015/jun/01/the-counted-map-us-police-killings" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>no matter where you get your data, you'll likely need to do some cleanup</h2>
+        </div>
+
+        <div class="slide">
+            <h2>think about:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>think about:</h2>
+            <ol>
+                <li>orientation (rows/columns)</li>
+                <li>data types</li>
+                <li>handling <code>NULL</code> values</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>orientation</h2>
+        </div>
+
+        <div class="slide">
+            <h2>orientation</h2>
+            <p>Generally, the <strong>things</strong> you're visualizing should each have their own row</p>
+        </div>
+
+        <div class="slide">
+            <h2>orientation</h2>
+            <p>If you're visualizing <strong>change over time</strong>, each <strong>time</strong> should get its own row</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/orientation-0.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/orientation-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/orientation-1.png);">
+            <h2>removed some columns we didn't need for visualizing</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/orientation-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/orientation-2.png);">
+            <h2>transposed</h2>
+        </div>
+
+        <div class="slide">
+            <h2>data types</h2>
+        </div>
+
+        <div class="slide">
+            <h2>data types</h2>
+            <p>every column should only contain data of one <strong>type</strong></p>
+        </div>
+
+        <div class="slide">
+            <h2>data types you'll use:</h2>
+            <ul style="list-style: disc;">
+                <li>text</li>
+                <li>numbers</li>
+                <li>dates</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>data types</h2>
+            <p>numeric columns should have nothing but numbers in them</p>
+        </div>
+
+        <div class="slide">
+            <h2>data types</h2>
+            <p>if numeric columns aren't working, watch out for commas or other marks in those columns!</p>
+        </div>
+
+        <div class="slide">
+            <h2>handling <code>NULL</code> values</h2>
+        </div>
+
+        <div class="slide">
+            <h2>handling <code>NULL</code> values</h2>
+            <p>you'll often be missing some data for some rows</p>
+        </div>
+
+        <div class="slide">
+            <h2>handling <code>NULL</code> values</h2>
+            <p>most software prefers these cells to be empty rather than have any text in them</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nulls-0.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/nulls-1.png);">
+        </div>
+
+        <div class="slide">
+            <h2>now that you have data...how do you visualize it?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>first, ask yourself what you want your visualization to do</h2>
+        </div>
+
+        <div class="slide">
+            <h2>consider:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>consider:</h2>
+            <ol>
+                <li>Is it going to exist online?</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>consider:</h2>
+            <ol>
+                <li>Is it going to exist online?</li>
+                <li>Do I need to print it?</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>consider:</h2>
+            <ol>
+                <li>Is it going to exist online?</li>
+                <li>Do I need to print it?</li>
+                <li>Does it have to be interactive?</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>consider:</h2>
+            <ol>
+                <li>Is it going to exist online?</li>
+                <li>Do I need to print it?</li>
+                <li>Does it have to be interactive?</li>
+                <li>How often will the data change?</li>
+            </ol>
+        </div>
+
+        <div class="slide" style="background-image: url(img/google-sheets.png);">
+            <a href="https://docs.google.com/spreadsheets/d/1UIeLLuZXIn7tN6FbYgPoTYxjqBcUTDITliPUSQJTQUE/edit?usp=sharing" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/google-sheets.png);">
+            <h2>sometimes Google Sheets is sufficient</h2>
+            <a href="https://docs.google.com/spreadsheets/d/1UIeLLuZXIn7tN6FbYgPoTYxjqBcUTDITliPUSQJTQUE/edit?usp=sharing" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/data-voyager.png);">
+            <a href="https://vega.github.io/voyager/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/data-voyager.png);">
+            <h2>data voyager</h2>
+            <a href="https://vega.github.io/voyager/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/data-voyager.png);">
+            <h2>less user-friendly than other tools but can offer some interesting results</h2>
+            <a href="https://vega.github.io/voyager/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/data-voyager.png);">
+            <h2>in my experience, better with larger datasets</h2>
+            <a href="https://vega.github.io/voyager/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper.png);">
+            <a href="https://www.datawrapper.de/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper-pricing.png);">
+            <a href="https://www.datawrapper.de/pricing" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper-example-0.png);">
+            <a href="https://www.nyc.gov/site/doh/covid/covid-19-data-vaccines.page#nyc" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper-example-1.png);">
+            <a href="https://www.newamerica.org/better-life-lab/reports/lifting-barriers-paid-family-and-medical-leave-men-united-states/affording-leave-how-americans-get-pay-when-they-take-leave-and-how-they-cover-the-gaps/" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>for more advanced dataviz, code may be needed</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/d3.png);">
+            <a href="https://observablehq.com/@d3?tab=notebooks" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/d3.png);">
+            <h2>d3 is very powerful and can make dynamic visualizations</h2>
+            <a href="https://observablehq.com/@d3?tab=notebooks" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/d3-example.png);">
+            <a href="https://observablehq.com/@d3/density-contours-data" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/plot.png);">
+            <a href="https://observablehq.com/@observablehq/plot-gallery" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/plot.png);">
+            <h2>plot can do some common plots with a lot less code</h2>
+            <a href="https://observablehq.com/@observablehq/plot-gallery" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/plot-example.png);">
+            <a href="https://observablehq.com/@observablehq/plot-hexbin-binwidth" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>let's use datawrapper together</h2>
+            <p>download <a href="data/data.zip">this data</a> and use the <strong>culture-and-sport.csv</strong> file</p>
+            <p>go to <a href="https://www.datawrapper.de/">datawrapper.de</a> and make an account</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper-0.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawrapper-4.png);">
+        </div>
+
+        <div class="slide">
+            <h2>how do you make a map?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>GIS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Geographic Information System</h2>
+        </div>
+
+        <div class="slide">
+            <h2>GISs</h2>
+            <img src="img/arcgis.png" style="max-width: 25%;" />
+            <a href="http://qgis.org">
+                <img src="img/qgis.png" style="max-width: 25%;" />
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-in-use.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/foursquare-studio.png);">
+            <a class="source" href="https://studio.foursquare.com/home" target="_blank">foursquare studio</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/foursquare-studio.png);">
+            <h2>foursquare studio</h2>
+            <a class="source" href="https://studio.foursquare.com/home" target="_blank">foursquare studio</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/foursquare-studio.png);">
+            <h2>good for large datasets, free up to a point</h2>
+            <a class="source" href="https://studio.foursquare.com/home" target="_blank">foursquare studio</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/foursquare-studio-example-0.png);">
+            <a class="source" href="https://studio.foursquare.com/public/bb15088f-df54-4b24-b837-aaa64d10e0ba" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/umap.png);">
+            <a class="source" href="https://umap.openstreetmap.fr" target="_blank">umap.openstreetmap.fr</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/umap.png);">
+            <h2>uMap has fewer features but is totally free</h2>
+            <a class="source" href="https://umap.openstreetmap.fr" target="_blank">umap.openstreetmap.fr</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/umap.png);">
+            <h2>it can also be nice for collecting data</h2>
+            <a class="source" href="https://umap.openstreetmap.fr" target="_blank">umap.openstreetmap.fr</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/umap-example.png);">
+            <a class="source" href="https://umap.openstreetmap.fr/en/map/histoire-limoges_692235#15/45.8269/1.2663" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/umap-example-2.png);">
+            <a class="source" href="https://umap.openstreetmap.fr/en/map/registros-y-representaciones-de-cometas_903295#5/43.866/20.215" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt.png);">
+            <a class="source" href="https://felt.com/" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt-pricing.png);">
+            <a class="source" href="https://felt.com/product#faq-header" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt-example-0.png);">
+            <a class="source" href="https://felt.com/map/Hurricane-Ian-Icv2ZqAoRpO9ANOKLLg59BYD" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt-example-1.png);">
+            <a class="source" href="https://felt.com/map/Santa-Cruz-West-Cliff-Recreation-Area-rxzX2T6EQYeK0XMirw9BKFC" target="_blank">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>let's make a map together</h2>
+            <p>continue with <a href="data/data.zip">this data</a> and use the <strong>districts-and-cultural-institutions.geojson</strong> file</p>
+            <p>go to <a href="https://felt.com/">Felt</a> and make an account</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt-0.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/felt-4.png);">
+            <a href="https://felt.com/map/Untitled-Map-r8G1LiW5RZ60SjGWaIjLAC" class="source">map on Felt</a>
+        </div>
+
+    </body>
+</html>
